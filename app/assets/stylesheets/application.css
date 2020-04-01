@@ -1,0 +1,20 @@
+/*
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+  background-color: white;
+  color: black;
+  margin: 0; padding: 0;
+  font-family: Meiryo, sans-serif;
+}
+
+a:link { color: #00c; }
+a:visited { color: #00c; }
+a:hover { color: #ccf; }
+a img { border: none; }
+
+p, h1, h2, h3, table, ul {
+  margin: 0 0 1em;
+}
