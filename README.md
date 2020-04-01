@@ -1,0 +1,1 @@
+# asagao_railsv5.2.4
