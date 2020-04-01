@@ -1,0 +1,33 @@
+W, [2020-04-02T02:47:16.910763 #94374]  WARN -- : Creating scope :open. Overwriting existing method Article.open.
+D, [2020-04-02T02:48:45.876856 #94928] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "articles"[0m
+D, [2020-04-02T02:48:45.878764 #94928] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+D, [2020-04-02T02:48:45.881398 #94928] DEBUG -- :   [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "body" text NOT NULL, "released_at" datetime NOT NULL, "expired_at" datetime, "member_only" boolean DEFAULT 0 NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-04-02T02:48:45.882794 #94928] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "members"[0m
+D, [2020-04-02T02:48:45.884548 #94928] DEBUG -- :   [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "members" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer NOT NULL, "name" varchar NOT NULL, "full_name" varchar, "email" varchar, "birthday" date, "gender" integer DEFAULT 0 NOT NULL, "administrator" boolean DEFAULT 0 NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "phone" varchar)[0m
+D, [2020-04-02T02:48:45.886832 #94928] DEBUG -- :   [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+D, [2020-04-02T02:48:45.891977 #94928] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+D, [2020-04-02T02:48:45.896057 #94928] DEBUG -- :   [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200331164200)[0m
+D, [2020-04-02T02:48:45.897696 #94928] DEBUG -- :   [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200327142128),
+(20200327131748);
+
+[0m
+D, [2020-04-02T02:48:45.906663 #94928] DEBUG -- :   [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-04-02T02:48:45.912264 #94928] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+D, [2020-04-02T02:48:45.920775 #94928] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-02T02:48:45.924226 #94928] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "production"], ["created_at", "2020-04-01 17:48:45.922198"], ["updated_at", "2020-04-01 17:48:45.922198"]]
+D, [2020-04-02T02:48:45.926296 #94928] DEBUG -- :   [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-02T02:48:45.927856 #94928] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+D, [2020-04-02T02:48:45.928764 #94928] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-02T02:48:45.967992 #94928] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-02T02:48:45.979175 #94928] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+W, [2020-04-02T02:49:06.758968 #94929]  WARN -- : Creating scope :open. Overwriting existing method Article.open.
+I, [2020-04-02T04:04:06.027620 #94929]  INFO -- : [18870e84-6212-49e7-a5c8-a1319071bdb2] Started GET "/articles/9" for 127.0.0.1 at 2020-04-02 04:04:06 +0900
+I, [2020-04-02T04:04:06.073247 #94929]  INFO -- : [18870e84-6212-49e7-a5c8-a1319071bdb2] Processing by ArticlesController#show as HTML
+I, [2020-04-02T04:04:06.073464 #94929]  INFO -- : [18870e84-6212-49e7-a5c8-a1319071bdb2]   Parameters: {"id"=>"9"}
+D, [2020-04-02T04:04:06.189581 #94929] DEBUG -- : [18870e84-6212-49e7-a5c8-a1319071bdb2]   [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+I, [2020-04-02T04:04:06.191941 #94929]  INFO -- : [18870e84-6212-49e7-a5c8-a1319071bdb2] Completed 404 Not Found in 118ms (ActiveRecord: 6.1ms)
+F, [2020-04-02T04:04:06.194102 #94929] FATAL -- : [18870e84-6212-49e7-a5c8-a1319071bdb2]   
+F, [2020-04-02T04:04:06.194254 #94929] FATAL -- : [18870e84-6212-49e7-a5c8-a1319071bdb2] ActiveRecord::RecordNotFound (Couldn't find Article with 'id'=9):
+F, [2020-04-02T04:04:06.197736 #94929] FATAL -- : [18870e84-6212-49e7-a5c8-a1319071bdb2]   
+F, [2020-04-02T04:04:06.197807 #94929] FATAL -- : [18870e84-6212-49e7-a5c8-a1319071bdb2] app/controllers/articles_controller.rb:7:in `show'
